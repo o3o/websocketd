@@ -1,0 +1,17 @@
+name "test_server"
+description "Test server"
+authors "Orfeo Da Vià"
+copyright "Copyright © 2020, o3o"
+dependency "websocketd" path="../"
+targetType "executable"
+
+sourceFiles "test_server.d"
+configuration "echo" {
+   targetType "executable"
+   versions "echo"
+}
+configuration "broadcast" {
+   targetType "executable"
+   versions "broadcast"
+}
+

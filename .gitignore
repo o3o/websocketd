@@ -1,0 +1,6 @@
+.vim-bookmarks
+examples/.dub
+.dub
+libwebsocketd.a
+examples/test_server
+websocketd-test-library
