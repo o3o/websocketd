@@ -53,6 +53,24 @@ To run `echo` version:
 $ cd examples
 $ dub run -cecho
 ```
+
+In order to test we can use [websocat](https://lib.rs/crates/websocat)
+```
+$ websocat ws://127.0.0.1:10301
+```
+If you use nginx you can create a proxy:
+
+```
+  location /ws {
+        proxy_pass http://127.0.0.1:10301;
+  }
+
+```
+so:
+```
+$ websocat ws://127.0.0.1/ws
+```
+
 ## Broadcasting server based on the connected path
 
 Clients can subscribe to the channel `xyz` by connecting to `ws://example.com/xyz`. Clients connected
@@ -92,7 +110,7 @@ class BroadcastServer : WebSocketServer {
 To run `broadcast` version:
 ```
 $ cd examples
-$ dub run -cbroadcat
+$ dub run -cbroadcast
 ```
 
 # Running the server with TLS
